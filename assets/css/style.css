@@ -20,7 +20,17 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     padding: 10rem 0 0;
-    
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: transform 500ms ease;
+}
+/*scale card on hover*/
+.container:hover{
+    transform: scale(1.05);
+}
+/*lighten text*/
+.container{
+    color: rgb(255 255 255/0.85);
 }
 /* content wrapper */
 .content-wrapper{
@@ -34,13 +44,20 @@ body{
     height: 30%;
     width: 100%;
     padding: var(--padding);
-    
+    /*hide text content*/
+    transform: translateY(72%);
+}
+/*animation content section*/
+.content:hover .content-wrapper{
+    transform: translateY(0);
+
 }
 /*card headline*/
 .card-title{
     position: relative;
     width: max-content;
 }
+/*title underline*/
 .card-title::after{
     content: "";
     position: absolute;
@@ -49,6 +66,14 @@ body{
     background: rgb(20, 225, 225);
     height: 0.2rem;
     width: calc(100% + var(--padding));
+    /*animation*/
+    transform: scaleX(0);
+    transition: transform 500ms ease;
+    transform-origin:left ;
+}
+/*underline animatioon*/
+.container:hover .card-title::after{
+    transform: scaleX(1);
 }
 /* button styling */
 .btn{
@@ -58,4 +83,9 @@ body{
     display: inline-block;
     padding: 0.5rem 1rem;
     border-radius: 0.3rem;
+}
+.btn:focus,
+.btn:hover{
+    background-color: teal;
+    color: #fff;
 }
