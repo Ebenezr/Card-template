@@ -1,0 +1,60 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    line-height: 1.6;
+    background: #3e3e3e;
+    display: grid;
+    place-items: center;
+    font-family: sans-serif;
+
+}
+/* main container */
+.container{
+    max-width: 35ch;
+    background-image: url(./ali-dadras-kDeHROJGPrA-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 10rem 0 0;
+    
+}
+/* content wrapper */
+.content-wrapper{
+    --padding:1.5rem;
+    background: linear-gradient(
+        hsl(0 0% 0%/0),
+        hsl(20 0% 0%/0.3)20%,
+        hsl(0 0% 0%/1)
+    );
+    color: #fff;
+    height: 30%;
+    width: 100%;
+    padding: var(--padding);
+    
+}
+/*card headline*/
+.card-title{
+    position: relative;
+    width: max-content;
+}
+.card-title::after{
+    content: "";
+    position: absolute;
+    left: calc(var(--padding)* -1);
+    bottom: 0;
+    background: rgb(20, 225, 225);
+    height: 0.2rem;
+    width: calc(100% + var(--padding));
+}
+/* button styling */
+.btn{
+    cursor: pointer;
+    background-color: rgb(20, 225, 225);
+    border: none;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+}
