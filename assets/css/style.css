@@ -1,3 +1,4 @@
+/* Author : Bukosia Ebenezar */
 *{
     padding: 0;
     margin: 0;
@@ -15,7 +16,7 @@ body{
 /* main container */
 .container{
     max-width: 35ch;
-    background-image: url(./ali-dadras-kDeHROJGPrA-unsplash.jpg);
+    background-image: url(../images/ali-dadras-kDeHROJGPrA-unsplash.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     padding: 10rem 0 0;
