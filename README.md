@@ -1,6 +1,6 @@
 # Screenshots
 
-## ![image](./assets/images/before.png)
+![image](./assets/images/before.png)
 
 ![image](./assets/images/after.png)
 
