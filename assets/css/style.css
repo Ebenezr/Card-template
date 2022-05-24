@@ -1,5 +1,14 @@
 /* Author : Bukosia Ebenezar */
-*{
+:root{
+    --clr-neutral-900:#3c3c3c;
+    --clr-neutral-400:rgb(56, 209, 209);
+    --clr-neutral-100:#fff;
+
+}
+
+*,
+*::after,
+*::before{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -7,7 +16,7 @@
 body{
     min-height: 100vh;
     line-height: 1.6;
-    background: #3e3e3e;
+    background: var(--clr-neutral-900);
     display: grid;
     place-items: center;
     font-family: sans-serif;
@@ -30,7 +39,7 @@ body{
 }
 /*lighten text*/
 .container{
-    color: rgb(255 255 255/0.85);
+    color: var(--clr-neutral-100);
 }
 /* content wrapper */
 .content-wrapper{
@@ -40,7 +49,7 @@ body{
         hsl(20 0% 0%/0.3)20%,
         hsl(0 0% 0%/1)
     );
-    color: #fff;
+    color: var(--clr-neutral-100);
     padding: var(--padding);
     /*hide text content*/
     
@@ -56,22 +65,18 @@ body{
     position: absolute;
     left: calc(var(--padding)* -1);
     bottom: -0.1rem;
-    background: rgb(20, 225, 225);
+    background: var(--clr-neutral-400);
     height: 0.2rem;
     width: calc(100% + var(--padding));
     /*animation*/
     transition: transform 500ms ease;
     transform-origin:left ;
 }
-/*underline animatioon*/
-.container:hover .card-title::after,
-.container:focus-within .card-title::after{
-    transform: scaleX(1);
-}
+
 /* button styling */
 .btn{
     cursor: pointer;
-    background-color: rgb(20, 225, 225);
+    background-color: var(--clr-neutral-400);
     border: none;
     display: inline-block;
     padding: 0.5rem 1rem;
@@ -80,8 +85,8 @@ body{
 }
 .btn:focus,
 .btn:hover{
-    background-color: teal;
-    color: #fff;
+    background-color: var(--clr-neutral-900);
+    color: var(--clr-neutral-100);
 }
 /*active when primary focus device is hover*/
 /*inactive on touch screens*/
@@ -115,9 +120,27 @@ body{
         transition-delay: 500ms;
         transition: transform 500ms linear;
     }
-
+    /* title underline */
     .card-title::after {
         transform: scaleX(0);
 
     }
+    /*underline animatioon*/
+    .container:hover .card-title::after,
+    .container:focus-within .card-title::after {
+        transform: scaleX(1);
+    }
+}
+/*disable all animations as user preference*/
+@media (prefers-reduced-motion:reduce){
+    *,
+    *,::after,
+    *::befor{
+        animation-duration: 0.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:0.0ms !important;
+        scroll-behavior: auto !important;
+        transition-delay:0ms !important;
+    }
+
 }
